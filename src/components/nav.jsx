@@ -1,5 +1,6 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
+import {FaEthereum} from 'react-icons/fa'
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +17,11 @@ function Nav() {
                   alt="Workflow"
                 />
               </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
+              <div className="md:hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4 ">
                   <a
                     href="#"
-                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium "
                   >
                     Feed
                   </a>
@@ -38,12 +39,23 @@ function Nav() {
                   >
                     Activity
                   </a>
-
-                
                 </div>
               </div>
             </div>
-            <div className="-mr-2 flex md:hidden">
+
+            <div>
+              <button class="bg-gray-300 hover:bg-gray-400 text-sm text-gray-800 font-bold py-2 px-7 inline-flex items-center mr-2">
+                Create
+              </button>
+              <button class="bg-gray-900 hover:bg-gray-400 text-sm text-white font-bold py-2 px-7 inline-flex items-center">
+                <FaEthereum />
+                32.06 ETH
+              </button>
+              {/* <Button type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
+            Download
+          </Button> */}
+            </div>
+            <div className="-mr-2 flex hidden md:contents ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -100,7 +112,7 @@ function Nav() {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="md:hidden" id="mobile-menu">
+            <div className="" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
                   href="#"
@@ -108,41 +120,11 @@ function Nav() {
                 >
                   Dashboard
                 </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Team
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Projects
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Calendar
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  Reports
-                </a>
               </div>
             </div>
           )}
         </Transition>
       </nav>
-
-    
     </div>
   );
 }
